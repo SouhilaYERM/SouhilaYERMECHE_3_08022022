@@ -1,0 +1,198 @@
+$valeur1 : 10px;
+$valeur2 : 25px;
+$primaire:#9356DC;
+$secondaire: #FF79DA;
+$tertiaire: #99E2D0;
+$quaternaire: #c8c8c8;
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', 'sans-serif';
+}
+/* style de la partie header */
+.header {
+    box-shadow: 0px 2px 5px darken($quaternaire, 5);
+    position: relative;
+    &_logo {
+        text-align: center;
+        font-family: 'Shrikhand', 'cursive';
+        margin : 0px 0px 2px 0px;
+        padding: $valeur1;
+        font-size: 16pt;
+    }
+    &_icone {
+        position: absolute;
+        padding:12px;
+        font-size: 15pt;
+    }
+}
+.description {
+    text-align: center;
+    &_position {
+        background-color: lighten($quaternaire, 15);
+        padding: $valeur1;
+        font-size: 10pt;
+    } 
+    &_icone {
+        padding-right: $valeur1;
+    }
+    &_accroche {
+        padding: $valeur2;
+        background-color: lighten($quaternaire, 18);
+        text-align: center;
+        height: 270px;
+    }
+    &_text_accroche {
+        font-size: 11pt;
+        font-weight: 100;
+        color: darken($quaternaire, 50);
+    } 
+}
+.lien{
+    text-decoration: none;
+    color: darken($quaternaire,60)
+}
+.titre_de_section {
+    padding-left: $valeur2;
+}
+.bouton{
+    margin: $valeur2;
+    padding: $valeur1;
+    font-size: 11pt;
+    max-width: 210px;
+    background: linear-gradient( $secondaire , $primaire); 
+    border-radius: 20px;
+    color: lighten($quaternaire,100);
+    align-self: center;
+    box-shadow:  5px 5px 5px $quaternaire;
+}
+.fonctionnement {
+    &_list_etapes {
+        margin:$valeur2 -5px;
+        display: flex; 
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    &_etape {
+        width:270px;
+        padding:$valeur2;
+        margin: $valeur1;
+        background-color: lighten($quaternaire, 18) ;
+        border-radius: 20px;
+        position:relative;
+        box-shadow:  5px 5px 5px $quaternaire;
+    }
+    &_nombre {
+        position: absolute; 
+        left: -10px;
+        padding: 5px 5px 3px 5px;
+        background: linear-gradient( $secondaire , $primaire);
+        color: lighten($quaternaire,100);
+        border-radius: 20px;
+        font-size: 8pt;
+    }
+    &_icone {
+        width: 20px;
+    }
+    &_text {
+        padding-left: $valeur1;
+    }
+}
+.liste_des_restaurants {
+    background-color: lighten($quaternaire, 18) ;
+    padding-top: $valeur2;
+    padding-bottom : $valeur2 +10px;
+}
+.restaurants {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+    &_carte {
+        height: 210px;
+        margin: $valeur1;
+        box-shadow:  5px 5px 5px $quaternaire;
+        background-color: lighten($quaternaire,100);
+        border-radius: 10px;
+    }
+    &_image {
+        width:300px;
+        height: 150px;
+        position: relative;
+    }
+    &_img {
+        object-fit: cover;
+        width:300px;
+        height:150px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    &_nouveau {
+        position : absolute;
+        padding: 5px;
+        background-color: $tertiaire;
+        right: 10px;
+        top: 10px;
+        border-radius: 5px;
+        color: darken($tertiaire, 40);
+    }
+    &_description {
+        display:flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    &_et_lieu {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    &_nom {
+        margin: 0px;
+    }
+    &_coeur {
+        padding: 10px;
+        font-size: 20px;
+    }
+}
+.footer {
+    background-color: darken($quaternaire,60);
+    &_logo{
+        font-family: 'Shrikhand', 'cursive';
+        color: lighten($quaternaire,40);
+        padding:10px;
+        font-size: 16pt;
+        margin:0px;
+    }
+    &_list {
+        list-style: none;
+        padding: 10px;
+        color:lighten($quaternaire,40);
+        margin: 0px;
+    }
+    &_icone {
+        width:20px;
+    }
+}
+/* style des pages des restaurants*/
+.main {
+    background-color: lighten($quaternaire, 18); ;
+}
+.accueil {
+    position: relative;
+    &_image {
+        object-fit: cover;
+        width:100%;
+        max-height: 220px;
+    }
+    &_nom {
+        padding:10px;
+        background-color: lighten($quaternaire, 18);
+        position: absolute;
+        bottom: -20px;
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius:20px;
+        font-family: 'Shrikhand', 'cursive';
+    }
+}
+.list {
+    padding:10px;
+
+}

@@ -3,24 +3,29 @@
     <head>
         <title>OhMyfood</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content= "width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <meta name="viewport" content= "width=device-width,initial-scale=1.0"/>
         <link rel="stylesheet" href="styles/normalise.css"/>
-        <link rel="stylesheet" href="styles/style.css"/>
+        <link rel="stylesheet" href="sass/style.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet"> 
         <script src="https://kit.fontawesome.com/5e5ae3f075.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header class="header_restaurant">
-            <i class="fas fa-arrow-left"></i>
-            <h1 class="logo">ohmyfood</h1>
+        <header class="header">
+            <i class="fas fa-arrow-left header_icone"></i>
+            <h1 class="header_logo">ohmyfood</h1>
         </header>
-        <main>
-            <h2 class="nom_restaurant">A la française</h2>
-            <section class="list_des_plats">
-                <h3 class="type_du_plat">Entrées</h3>
+        <main class="main">
+            <div class="accueil">
+                <img src="images/restaurants/a_la_française.jpg" class="accueil_image">
+                <div class="accueil_nom_et_coeur">
+                    <h2 class="accueil_nom">à la française</h2>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+            <section class="list">
+                <h3 class="list_type_de_plats">Entrées</h3>
                 <div class="plat_et_tarif">
                     <div class="plat">
                         <span class="nom_du_plat">Tartare de poulpe acidulé</span>
@@ -120,15 +125,15 @@
                 <span class="bouton">Commander</span>
             </section>
         </main>
-        <footer>
-            <h2 class="titre_de_section">ohmyfood</h2>
-            <ul class="list_footer">
+        <footer class="footer">
+            <h2 class="footer_logo">ohmyfood</h2>
+            <ul class="footer_list">
                 <li class="foot">
-                    <i class="fas fa-utensils"></i>
-                    <span>proposer un restaurant</span>
+                    <i class="fas fa-utensils footer_icone"></i>
+                    <span>Proposer un restaurant</span>
                 </li>
                 <li class="foot">
-                    <i class="fas fa-hands-helping"></i>
+                    <i class="fas fa-hands-helping footer_icone"></i>
                     <span>Devenir partenaire</span>
                 </li>
                 <li class="foot">
