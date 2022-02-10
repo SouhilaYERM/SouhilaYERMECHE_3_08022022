@@ -62,17 +62,15 @@
 }
 
 .bouton {
-  margin: 25px;
-  padding: 10px;
-  font-size: 11pt;
+  margin: auto;
+  padding: 15px;
+  font-size: 12pt;
   max-width: 210px;
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
-  border-radius: 20px;
+  border-radius: 25px;
   color: white;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  text-align: center;
   -webkit-box-shadow: 5px 5px 5px #c8c8c8;
           box-shadow: 5px 5px 5px #c8c8c8;
 }
@@ -91,7 +89,7 @@
 
 .fonctionnement_etape {
   width: 270px;
-  padding: 25px;
+  padding: 15px;
   margin: 10px;
   background-color: #f6f6f6;
   border-radius: 20px;
@@ -102,7 +100,7 @@
 
 .fonctionnement_nombre {
   position: absolute;
-  left: -10px;
+  left: -5px;
   padding: 5px 5px 3px 5px;
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
@@ -113,6 +111,7 @@
 
 .fonctionnement_icone {
   width: 20px;
+  margin-left: 10px;
 }
 
 .fonctionnement_text {
@@ -244,7 +243,69 @@
   font-family: 'Shrikhand', 'cursive';
 }
 
+.accueil_nom::first-letter {
+  text-transform: uppercase;
+}
+
 .list {
   padding: 10px;
+}
+
+.list_ls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.list_type_du_plat {
+  text-transform: uppercase;
+  width: 40px;
+  border-bottom: 2px solid #99E2D0;
+}
+
+.list_plat_et_tarif {
+  padding: 10px;
+  margin: 10px 5px 10px 5px;
+  background: white;
+  width: 290px;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 5px 5px 5px #c8c8c8;
+          box-shadow: 5px 5px 5px #c8c8c8;
+}
+
+.list_plats {
+  margin: 10px;
+}
+
+.list_nom_du_plat {
+  font-weight: 900;
+}
+
+.list_description {
+  font-size: 10pt;
+}
+
+.list_prix {
+  padding-top: 20px;
+}
+
+.list_check {
+  display: none;
+}
+
+.commander {
+  padding: 40px 10px 50px 10px;
+  background-color: #f6f6f6;
 }
 /*# sourceMappingURL=style.css.map */

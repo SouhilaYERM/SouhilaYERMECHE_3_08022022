@@ -55,14 +55,14 @@ $quaternaire: #c8c8c8;
     padding-left: $valeur2;
 }
 .bouton{
-    margin: $valeur2;
-    padding: $valeur1;
-    font-size: 11pt;
+    margin: auto;
+    padding: $valeur1+5px;
+    font-size: 12pt;
     max-width: 210px;
     background: linear-gradient( $secondaire , $primaire); 
-    border-radius: 20px;
+    border-radius: 25px;
     color: lighten($quaternaire,100);
-    align-self: center;
+    text-align: center;
     box-shadow:  5px 5px 5px $quaternaire;
 }
 .fonctionnement {
@@ -74,7 +74,7 @@ $quaternaire: #c8c8c8;
     }
     &_etape {
         width:270px;
-        padding:$valeur2;
+        padding:$valeur1 +5px;
         margin: $valeur1;
         background-color: lighten($quaternaire, 18) ;
         border-radius: 20px;
@@ -83,7 +83,7 @@ $quaternaire: #c8c8c8;
     }
     &_nombre {
         position: absolute; 
-        left: -10px;
+        left: -5px;
         padding: 5px 5px 3px 5px;
         background: linear-gradient( $secondaire , $primaire);
         color: lighten($quaternaire,100);
@@ -92,6 +92,7 @@ $quaternaire: #c8c8c8;
     }
     &_icone {
         width: 20px;
+        margin-left: 10px;
     }
     &_text {
         padding-left: $valeur1;
@@ -190,9 +191,50 @@ $quaternaire: #c8c8c8;
         border-top-left-radius: 20px;
         border-top-right-radius:20px;
         font-family: 'Shrikhand', 'cursive';
+        &::first-letter {
+            text-transform: uppercase;
+        }
     }
 }
 .list {
     padding:10px;
-
+    &_ls {
+        display:flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    &_type_du_plat {
+        text-transform: uppercase;
+        width: 40px;
+        border-bottom: 2px solid $tertiaire;
+    }
+    &_plat_et_tarif {
+        padding: 10px; 
+        margin: 10px 5px 10px 5px;
+        background: lighten($quaternaire, 50);
+        width: 290px;
+        border-radius: 15px;
+        display:flex;
+        justify-content: space-between;
+        box-shadow:  5px 5px 5px $quaternaire;
+    }
+    &_plats {
+        margin: 10px;
+    }
+    &_nom_du_plat {
+        font-weight: 900;
+    }
+    &_description {
+        font-size: 10pt;
+    }
+    &_prix {
+        padding-top: 20px;
+    }
+    &_check {
+        display:none;
+    }
+}
+.commander {
+    padding: 40px 10px 50px 10px; 
+    background-color: lighten($quaternaire,18);
 }
