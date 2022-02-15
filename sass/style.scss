@@ -4,6 +4,12 @@ $primaire:#9356DC;
 $secondaire: #FF79DA;
 $tertiaire: #99E2D0;
 $quaternaire: #c8c8c8;
+@mixin hover-etape {
+    background-color: lighten($primaire, 35);
+    .fonctionnement_icone {
+        color:$primaire;
+    }
+}
 *{
     box-sizing: border-box;
     font-family: 'Roboto', 'sans-serif';
@@ -71,6 +77,9 @@ $quaternaire: #c8c8c8;
         display: flex; 
         justify-content: space-evenly;
         flex-wrap: wrap;
+        :hover {
+            @include hover-etape;
+        }
     }
     &_etape {
         width:270px;
@@ -97,9 +106,12 @@ $quaternaire: #c8c8c8;
     &_text {
         padding-left: $valeur1;
     }
+    /*&_etape:hover {
+        background-color: lighten($primaire,35);
+    }*/
 }
 .liste_des_restaurants {
-    background-color: lighten($quaternaire, 18) ;
+    background-color: lighten($quaternaire, 18);
     padding-top: $valeur2;
     padding-bottom : $valeur2 +10px;
 }

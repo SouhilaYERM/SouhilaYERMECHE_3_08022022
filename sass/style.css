@@ -75,6 +75,12 @@
           box-shadow: 5px 5px 5px #c8c8c8;
 }
 
+.fonctionnement {
+  /*&_etape:hover {
+        background-color: lighten($primaire,35);
+    }*/
+}
+
 .fonctionnement_list_etapes {
   margin: 25px -5px;
   display: -webkit-box;
@@ -85,6 +91,14 @@
           justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.fonctionnement_list_etapes :hover {
+  background-color: #f2eafb;
+}
+
+.fonctionnement_list_etapes :hover .fonctionnement_icone {
+  color: #9356DC;
 }
 
 .fonctionnement_etape {
