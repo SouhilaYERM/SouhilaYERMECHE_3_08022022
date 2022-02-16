@@ -75,12 +75,6 @@
           box-shadow: 5px 5px 5px #c8c8c8;
 }
 
-.fonctionnement {
-  /*&_etape:hover {
-        background-color: lighten($primaire,35);
-    }*/
-}
-
 .fonctionnement_list_etapes {
   margin: 25px -5px;
   display: -webkit-box;
@@ -193,6 +187,23 @@
   padding: 10px;
 }
 
+.restaurants_description :hover .coeurs_vide {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 0;
+}
+
+.restaurants_description :hover .coeurs_plein {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
+}
+
 .restaurants_et_lieu {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -202,9 +213,29 @@
   margin: 0px;
 }
 
-.restaurants_coeur {
-  padding: 10px;
-  font-size: 20px;
+.coeurs {
+  font-size: 20pt;
+  position: relative;
+}
+
+.coeurs_plein {
+  opacity: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 1500ms;
+  transition: all 1500ms;
+}
+
+.coeurs_vide {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
 }
 
 .footer {

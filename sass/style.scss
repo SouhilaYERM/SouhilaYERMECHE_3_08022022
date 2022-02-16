@@ -10,10 +10,27 @@ $quaternaire: #c8c8c8;
         color:$primaire;
     }
 }
+@mixin heart-hover {
+    .coeurs_vide {
+        background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index : 0;
+    }
+    .coeurs_plein {
+        background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: 1;
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
 *{
     box-sizing: border-box;
     font-family: 'Roboto', 'sans-serif';
 }
+
 /* style de la partie header */
 .header {
     box-shadow: 0px 2px 5px darken($quaternaire, 5);
@@ -106,9 +123,6 @@ $quaternaire: #c8c8c8;
     &_text {
         padding-left: $valeur1;
     }
-    /*&_etape:hover {
-        background-color: lighten($primaire,35);
-    }*/
 }
 .liste_des_restaurants {
     background-color: lighten($quaternaire, 18);
@@ -151,6 +165,9 @@ $quaternaire: #c8c8c8;
         display:flex;
         justify-content: space-between;
         padding: 10px;
+        :hover {
+            @include heart-hover;
+        }
     }
     &_et_lieu {
         border-bottom-left-radius: 10px;
@@ -159,11 +176,28 @@ $quaternaire: #c8c8c8;
     &_nom {
         margin: 0px;
     }
-    &_coeur {
-        padding: 10px;
-        font-size: 20px;
+}
+.coeurs {
+    font-size: 20pt;
+    position : relative;
+    &_plein { 
+        opacity: 0;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: absolute;
+        right: 10px; 
+        top: 10px;
+        transform: scale(1);
+        transition: all 1500ms;
+    }
+    &_vide {
+        position: absolute; 
+        top:10px;
+        right: 10px;
+        z-index: 1;
     }
 }
+
 .footer {
     background-color: darken($quaternaire,60);
     &_logo{
