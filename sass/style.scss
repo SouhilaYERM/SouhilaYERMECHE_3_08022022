@@ -83,7 +83,7 @@ $quaternaire: #c8c8c8;
 }
 .bouton{
     margin: auto;
-    padding: $valeur1+5px;
+    padding: $valeur1 +5px;
     font-size: 12pt;
     max-width: 210px;
     background: linear-gradient( $secondaire , $primaire); 
@@ -185,8 +185,7 @@ $quaternaire: #c8c8c8;
     }
 }
 .coeurs {
-    font-size: 20pt;
-    
+    font-size: 20pt;  
     position : relative;
     &_plein { 
         opacity: 0;
@@ -196,7 +195,7 @@ $quaternaire: #c8c8c8;
         right: 10px; 
         top: 10px;
         transform: scale(1);
-        transition: all 1500ms;
+        transition: all 800ms;
     }
     &_vide {
         position: absolute; 
@@ -224,6 +223,9 @@ $quaternaire: #c8c8c8;
     &_icone {
         width:20px;
     }
+}
+.contact {
+    color:white;
 }
 /* style des pages des restaurants*/
 .main {
@@ -360,9 +362,9 @@ $quaternaire: #c8c8c8;
 .content{
     transform-origin: bottom;
     transform: scale(0);
-    animation: chargement; 
+    animation: chargement linear; 
     animation-delay: 2500ms;
-    animation-duration: 500ms;
+    animation-duration: 100ms;
     background-color: white;
     animation-fill-mode: forwards;
 }
@@ -397,44 +399,78 @@ $quaternaire: #c8c8c8;
   height: 100%;
   transform-origin: bottom;
   transform: scale(1); 
-  animation: disparition;
-  animation-delay: 2500ms; 
+  animation: disparition linear;
+  animation-delay: 2400ms; 
   animation-duration: 500ms;
   animation-fill-mode: forwards; 
 }
-.text{
-  color: #99E2D0;
-  animation: shadow 1000ms ease-in-out infinite;
-  margin: 20px;
-  font-family: 'Shrikhand', 'Cursive';
+.letter {
+    font-family: 'Shrikhand', 'cursive';
+    animation: spinner 1500ms linear infinite, shadow 1500ms linear infinite;
+    animation-fill-mode: forwards;
+    letter-spacing: 5px;
+    font-size: 50pt;
+    transform: scale(0);
 }
-@keyframes shadow {
-  0%{text-shadow:0px 0px 0px}
-  100%{
-    text-shadow:5px 5px 5px #C8C8C8;
-  }
+.let1 {
+    animation-delay: 100ms, 0ms;
+    color: darken(#9356DC,5);
 }
-.loader {
-  height: 40px; 
-  width: 10px; 
-  vertical-align: middle;
-  border-left: 10px solid #99E2D0;
-  animation: spinner 1000ms ease-in-out infinite;
-  margin: 10px;
+.let2 {
+    animation-delay: 200ms, 0ms;
+    color: #9356DC;
 }
-.load1{
-  animation-delay: 400ms;
+.let3 {
+    animation-delay: 300ms, 0ms;
+    color: lighten(#9356DC,5)
 }
-.load2{
-  animation-delay: 800ms;
+.let4 {
+    animation-delay: 400ms, 0ms;
+    color:lighten(#9356DC,10);
 }
-.load3{
-  animation-delay: 1200ms;
+.let5 {
+    animation-delay: 500ms, 0ms;
+    color:#FF79DA;
+}
+.let6 {
+    animation-delay:600ms, 0ms;
+    color: darken(#FF79DA,5);
+}
+.let7 {
+    animation-delay:700ms, 0ms;
+    color: darken(#FF79DA,10);
+}
+.let8 {
+    animation-delay:800ms,0ms;
+    color:darken(#FF79DA,15);
 }
 @keyframes spinner {
-  0%{transform:scaleY(0);}
-  50% {transform:scaleY(1);}
-  100%{transform:scaleY(0);}
+    0% {
+        transform: scale(0); 
+        opacity:0;
+    }
+    80% {
+        transform: scale(1.2);
+        opacity:1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: .9;
+    }
+}
+@keyframes shadow {
+    0%{
+      text-shadow:5px 5px 5px #FF79DA;
+    }
+    40% {
+        text-shadow:5px 5px 5px #9356DC;
+    }
+    60% {
+        text-shadow: 5px 5px 5px #FF79DA;
+    }
+    100%{
+    text-shadow:5px 5px 5px #9356DC;
+    }
 }
 @keyframes animation {
     0% {

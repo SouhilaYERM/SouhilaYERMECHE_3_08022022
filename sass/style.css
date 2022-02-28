@@ -235,8 +235,8 @@
   top: 10px;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 1500ms;
-  transition: all 1500ms;
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
 }
 
 .coeurs_vide {
@@ -267,6 +267,10 @@
 
 .footer_icone {
   width: 20px;
+}
+
+.contact {
+  color: white;
 }
 
 /* style des pages des restaurants*/
@@ -468,12 +472,12 @@
           transform-origin: bottom;
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-animation: chargement;
-          animation: chargement;
+  -webkit-animation: chargement linear;
+          animation: chargement linear;
   -webkit-animation-delay: 2500ms;
           animation-delay: 2500ms;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
+  -webkit-animation-duration: 100ms;
+          animation-duration: 100ms;
   background-color: white;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
@@ -549,94 +553,139 @@
           transform-origin: bottom;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-animation: disparition;
-          animation: disparition;
-  -webkit-animation-delay: 2500ms;
-          animation-delay: 2500ms;
+  -webkit-animation: disparition linear;
+          animation: disparition linear;
+  -webkit-animation-delay: 2400ms;
+          animation-delay: 2400ms;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-.text {
-  color: #99E2D0;
-  -webkit-animation: shadow 1000ms ease-in-out infinite;
-          animation: shadow 1000ms ease-in-out infinite;
-  margin: 20px;
-  font-family: 'Shrikhand', 'Cursive';
+.letter {
+  font-family: 'Shrikhand', 'cursive';
+  -webkit-animation: spinner 1500ms linear infinite, shadow 1500ms linear infinite;
+          animation: spinner 1500ms linear infinite, shadow 1500ms linear infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  letter-spacing: 5px;
+  font-size: 50pt;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
-@-webkit-keyframes shadow {
-  0% {
-    text-shadow: 0px 0px 0px;
-  }
-  100% {
-    text-shadow: 5px 5px 5px #C8C8C8;
-  }
+.let1 {
+  -webkit-animation-delay: 100ms, 0ms;
+          animation-delay: 100ms, 0ms;
+  color: #8641d8;
 }
 
-@keyframes shadow {
-  0% {
-    text-shadow: 0px 0px 0px;
-  }
-  100% {
-    text-shadow: 5px 5px 5px #C8C8C8;
-  }
+.let2 {
+  -webkit-animation-delay: 200ms, 0ms;
+          animation-delay: 200ms, 0ms;
+  color: #9356DC;
 }
 
-.loader {
-  height: 40px;
-  width: 10px;
-  vertical-align: middle;
-  border-left: 10px solid #99E2D0;
-  -webkit-animation: spinner 1000ms ease-in-out infinite;
-          animation: spinner 1000ms ease-in-out infinite;
-  margin: 10px;
+.let3 {
+  -webkit-animation-delay: 300ms, 0ms;
+          animation-delay: 300ms, 0ms;
+  color: #a16be0;
 }
 
-.load1 {
-  -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
+.let4 {
+  -webkit-animation-delay: 400ms, 0ms;
+          animation-delay: 400ms, 0ms;
+  color: #ae80e5;
 }
 
-.load2 {
-  -webkit-animation-delay: 800ms;
-          animation-delay: 800ms;
+.let5 {
+  -webkit-animation-delay: 500ms, 0ms;
+          animation-delay: 500ms, 0ms;
+  color: #FF79DA;
 }
 
-.load3 {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+.let6 {
+  -webkit-animation-delay: 600ms, 0ms;
+          animation-delay: 600ms, 0ms;
+  color: #ff60d3;
+}
+
+.let7 {
+  -webkit-animation-delay: 700ms, 0ms;
+          animation-delay: 700ms, 0ms;
+  color: #ff46cc;
+}
+
+.let8 {
+  -webkit-animation-delay: 800ms,0ms;
+          animation-delay: 800ms,0ms;
+  color: #ff2dc5;
 }
 
 @-webkit-keyframes spinner {
   0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
   }
-  50% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: .9;
   }
 }
 
 @keyframes spinner {
   0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
   }
-  50% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: .9;
+  }
+}
+
+@-webkit-keyframes shadow {
+  0% {
+    text-shadow: 5px 5px 5px #FF79DA;
+  }
+  40% {
+    text-shadow: 5px 5px 5px #9356DC;
+  }
+  60% {
+    text-shadow: 5px 5px 5px #FF79DA;
+  }
+  100% {
+    text-shadow: 5px 5px 5px #9356DC;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    text-shadow: 5px 5px 5px #FF79DA;
+  }
+  40% {
+    text-shadow: 5px 5px 5px #9356DC;
+  }
+  60% {
+    text-shadow: 5px 5px 5px #FF79DA;
+  }
+  100% {
+    text-shadow: 5px 5px 5px #9356DC;
   }
 }
 
