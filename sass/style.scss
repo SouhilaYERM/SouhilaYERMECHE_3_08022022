@@ -30,7 +30,11 @@ $quaternaire: #c8c8c8;
     box-sizing: border-box;
     font-family: 'Roboto', 'sans-serif';
 }
-
+.body {
+    &_loading_spinner {
+        display:none;
+    }
+}
 /* style de la partie header */
 .header {
     box-shadow: 0px 2px 5px darken($quaternaire, 5);
@@ -175,10 +179,14 @@ $quaternaire: #c8c8c8;
     }
     &_nom {
         margin: 0px;
+        &::first-letter{
+            text-transform: uppercase;
+        }
     }
 }
 .coeurs {
     font-size: 20pt;
+    
     position : relative;
     &_plein { 
         opacity: 0;
@@ -259,28 +267,156 @@ $quaternaire: #c8c8c8;
         margin: 10px 5px 10px 5px;
         background: lighten($quaternaire, 50);
         width: 290px;
+        max-height:60px;
         border-radius: 15px;
         display:flex;
         justify-content: space-between;
         box-shadow:  5px 5px 5px $quaternaire;
+        position: relative;
+        &:hover .list_nom_du_plat {
+            width:190px;
+        }
+        &:hover .list_description {
+            width:190px;
+        }
+        &:hover .list_prix {
+            transform:translateX(-50px);
+        }
+        &:hover .check {
+            transform:rotate(2turn);
+        }
+        &:hover .list_check {
+            transform: scaleX(1);
+            z-index: 0;
+        }
     }
     &_plats {
         margin: 10px;
     }
     &_nom_du_plat {
         font-weight: 900;
+        white-space: nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        display:inline-block;
     }
     &_description {
         font-size: 10pt;
+        white-space: nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        display:inline-block;
     }
-    &_prix {
-        padding-top: 20px;
+    &_prix_et_check {
+        display:flex;
     }
     &_check {
-        display:none;
+        padding-top: 10px;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition:transform 600ms;
+        background-color: #99E2D0;
+        height: 60px;
+        padding:20px 15px 20px 15px;
+        position: absolute;
+        top:0px;
+        right:-1px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
     }
+    &_prix{
+        padding-top:20px;
+        transform: translateX(0px);
+        transition: transform 600ms;
+    }
+}
+.check{
+    transform: rotate(0turn);
+    transition:transform 600ms; 
+    font-size: 16pt;
+    color:white;
 }
 .commander {
     padding: 40px 10px 50px 10px; 
     background-color: lighten($quaternaire,18);
+}
+/*** animations de chargement ***/
+.content{
+    transform-origin: bottom;
+    transform: scale(0);
+    animation: chargement; 
+    animation-delay: 2500ms;
+    animation-duration: 500ms;
+    background-color: white;
+    animation-fill-mode: forwards;
+}
+@keyframes chargement {
+    0% {
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes disparition {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+        height: 0;
+    }
+}
+.body {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+}
+.section{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 46px;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scale(1); 
+  animation: disparition;
+  animation-delay: 2500ms; 
+  animation-duration: 500ms;
+  animation-fill-mode: forwards; 
+}
+.text{
+  color: #99E2D0;
+  animation: shadow 1000ms ease-in-out infinite;
+  margin: 20px;
+  font-family: 'Shrikhand', 'Cursive';
+}
+@keyframes shadow {
+  0%{text-shadow:0px 0px 0px}
+  100%{
+    text-shadow:5px 5px 5px #C8C8C8;
+  }
+}
+.loader {
+  height: 40px; 
+  width: 10px; 
+  vertical-align: middle;
+  border-left: 10px solid #99E2D0;
+  animation: spinner 1000ms ease-in-out infinite;
+  margin: 10px;
+}
+.load1{
+  animation-delay: 400ms;
+}
+.load2{
+  animation-delay: 800ms;
+}
+.load3{
+  animation-delay: 1200ms;
+}
+@keyframes spinner {
+  0%{transform:scaleY(0);}
+  50% {transform:scaleY(1);}
+  100%{transform:scaleY(0);}
 }
