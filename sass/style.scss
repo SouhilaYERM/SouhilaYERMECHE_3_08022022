@@ -94,7 +94,7 @@ $quaternaire: #c8c8c8;
 }
 .fonctionnement {
     &_list_etapes {
-        margin:$valeur2 -5px;
+        margin:$valeur2;
         display: flex; 
         justify-content: space-evenly;
         flex-wrap: wrap;
@@ -227,7 +227,7 @@ $quaternaire: #c8c8c8;
 }
 /* style des pages des restaurants*/
 .main {
-    background-color: lighten($quaternaire, 18); ;
+    background-color: lighten($quaternaire, 18); 
 }
 .accueil {
     position: relative;
@@ -273,6 +273,10 @@ $quaternaire: #c8c8c8;
         justify-content: space-between;
         box-shadow:  5px 5px 5px $quaternaire;
         position: relative;
+        transform-origin: top;
+        opacity:0;
+        animation: animation 1000ms ease-in-out;
+        animation-fill-mode: forwards;
         &:hover .list_nom_du_plat {
             width:190px;
         }
@@ -329,6 +333,18 @@ $quaternaire: #c8c8c8;
         transform: translateX(0px);
         transition: transform 600ms;
     }
+}
+.first {
+    animation-delay: 200ms;
+}
+.second {
+    animation-delay: 400ms; 
+}
+.third {
+    animation-delay: 600ms;
+}
+.fourth {
+    animation-delay: 800ms;
 }
 .check{
     transform: rotate(0turn);
@@ -419,4 +435,18 @@ $quaternaire: #c8c8c8;
   0%{transform:scaleY(0);}
   50% {transform:scaleY(1);}
   100%{transform:scaleY(0);}
+}
+@keyframes animation {
+    0% {
+        transform: scaleY(0);
+        opacity: 0; 
+    }
+    80% {
+        transform:scaleY(1);
+        opacity: 1;
+    }
+    100% {
+        transform:scaleY(1);
+        opacity: 1;
+    }
 }
