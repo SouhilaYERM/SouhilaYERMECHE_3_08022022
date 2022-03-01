@@ -363,7 +363,7 @@ $quaternaire: #c8c8c8;
     transform-origin: bottom;
     transform: scale(0);
     animation: chargement linear; 
-    animation-delay: 2500ms;
+    animation-delay: 2900ms;
     animation-duration: 100ms;
     background-color: white;
     animation-fill-mode: forwards;
@@ -400,76 +400,55 @@ $quaternaire: #c8c8c8;
   transform-origin: bottom;
   transform: scale(1); 
   animation: disparition linear;
-  animation-delay: 2400ms; 
-  animation-duration: 500ms;
+  animation-delay: 2700ms; 
+  animation-duration: 100ms;
   animation-fill-mode: forwards; 
 }
 .letter {
     font-family: 'Shrikhand', 'cursive';
-    animation: spinner 1500ms linear infinite, shadow 1500ms linear infinite;
-    animation-fill-mode: forwards;
-    letter-spacing: 5px;
+    animation: spinner 1000ms linear infinite;
+    animation-fill-mode: backwards;
+    letter-spacing: 25px;
     font-size: 50pt;
     transform: scale(0);
+    background:-webkit-linear-gradient(top,#9356DC,#FF79DA);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
 }
 .let1 {
-    animation-delay: 100ms, 0ms;
-    color: darken(#9356DC,5);
+    animation-delay: 50ms, 0ms;
 }
 .let2 {
-    animation-delay: 200ms, 0ms;
-    color: #9356DC;
+    animation-delay: 100ms, 0ms;
 }
 .let3 {
-    animation-delay: 300ms, 0ms;
-    color: lighten(#9356DC,5)
+    animation-delay: 150ms, 0ms;
 }
 .let4 {
-    animation-delay: 400ms, 0ms;
-    color:lighten(#9356DC,10);
+    animation-delay: 200ms, 0ms;
 }
 .let5 {
-    animation-delay: 500ms, 0ms;
-    color:#FF79DA;
+    animation-delay: 250ms, 0ms;
 }
 .let6 {
-    animation-delay:600ms, 0ms;
-    color: darken(#FF79DA,5);
+    animation-delay:300ms, 0ms;
 }
 .let7 {
-    animation-delay:700ms, 0ms;
-    color: darken(#FF79DA,10);
+    animation-delay:350ms, 0ms;
 }
 .let8 {
-    animation-delay:800ms,0ms;
-    color:darken(#FF79DA,15);
+    animation-delay:400ms,0ms;
 }
 @keyframes spinner {
     0% {
-        transform: scale(0); 
-        opacity:0;
+        transform: scale(.5), 
     }
     80% {
-        transform: scale(1.2);
-        opacity:1;
+        transform: scale(1.5);
     }
     100% {
         transform: scale(1);
-        opacity: .9;
-    }
-}
-@keyframes shadow {
-    0%{
-      text-shadow:5px 5px 5px #FF79DA;
-    }
-    40% {
-        text-shadow:5px 5px 5px #9356DC;
-    }
-    60% {
-        text-shadow: 5px 5px 5px #FF79DA;
-    }
-    100%{
-    text-shadow:5px 5px 5px #9356DC;
     }
 }
 @keyframes animation {
