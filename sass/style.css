@@ -108,6 +108,7 @@
   position: relative;
   -webkit-box-shadow: 5px 5px 5px #c8c8c8;
           box-shadow: 5px 5px 5px #c8c8c8;
+  cursor: pointer;
 }
 
 .fonctionnement_nombre {
@@ -348,6 +349,7 @@
           animation: animation 1000ms ease-in-out;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  cursor: pointer;
 }
 
 .list_plat_et_tarif:hover .list_nom_du_plat {
