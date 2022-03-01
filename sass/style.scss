@@ -37,7 +37,7 @@ $quaternaire: #c8c8c8;
 }
 /* style de la partie header */
 .header {
-    box-shadow: 0px 2px 5px darken($quaternaire, 5);
+    
     position: relative;
     &_logo {
         text-align: center;
@@ -45,6 +45,7 @@ $quaternaire: #c8c8c8;
         margin : 0px 0px 2px 0px;
         padding: $valeur1;
         font-size: 16pt;
+        box-shadow: 0px 5px 10px darken($quaternaire,5)
     }
     &_icone {
         position: absolute;
@@ -195,7 +196,7 @@ $quaternaire: #c8c8c8;
         right: 10px; 
         top: 10px;
         transform: scale(1);
-        transition: all 800ms;
+        transition: all 500ms;
     }
     &_vide {
         position: absolute; 
@@ -408,13 +409,23 @@ $quaternaire: #c8c8c8;
     font-family: 'Shrikhand', 'cursive';
     animation: spinner 1000ms linear infinite;
     animation-fill-mode: backwards;
-    letter-spacing: 25px;
-    font-size: 50pt;
+    letter-spacing: 5px;
+    font-size: 20pt;
     transform: scale(0);
     background:-webkit-linear-gradient(top,#9356DC,#FF79DA);
     background-clip:text;
     -webkit-background-clip:text;
     color:transparent;
+}
+@media screen and (min-width:768px) {
+    .letter {
+        font-size: 40pt;
+    }
+}
+@media screen and (min-width:1024px) {
+    .letter {
+        font-size: 60pt;
+    }
 }
 .let1 {
     animation-delay: 50ms, 0ms;
@@ -453,15 +464,9 @@ $quaternaire: #c8c8c8;
 }
 @keyframes animation {
     0% {
-        transform: scaleY(0);
         opacity: 0; 
     }
-    80% {
-        transform:scaleY(1);
-        opacity: 1;
-    }
     100% {
-        transform:scaleY(1);
         opacity: 1;
     }
 }

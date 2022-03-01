@@ -10,8 +10,6 @@
 
 /* style de la partie header */
 .header {
-  -webkit-box-shadow: 0px 2px 5px #bbbbbb;
-          box-shadow: 0px 2px 5px #bbbbbb;
   position: relative;
 }
 
@@ -21,6 +19,8 @@
   margin: 0px 0px 2px 0px;
   padding: 10px;
   font-size: 16pt;
+  -webkit-box-shadow: 0px 5px 10px #bbbbbb;
+          box-shadow: 0px 5px 10px #bbbbbb;
 }
 
 .header_icone {
@@ -235,8 +235,8 @@
   top: 10px;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 800ms;
-  transition: all 800ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
 }
 
 .coeurs_vide {
@@ -569,14 +569,26 @@
           animation: spinner 1000ms linear infinite;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
-  letter-spacing: 25px;
-  font-size: 50pt;
+  letter-spacing: 5px;
+  font-size: 20pt;
   -webkit-transform: scale(0);
           transform: scale(0);
   background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .letter {
+    font-size: 40pt;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .letter {
+    font-size: 60pt;
+  }
 }
 
 .let1 {
@@ -651,36 +663,18 @@
 
 @-webkit-keyframes animation {
   0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
     opacity: 0;
   }
-  80% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-    opacity: 1;
-  }
   100% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
     opacity: 1;
   }
 }
 
 @keyframes animation {
   0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
     opacity: 0;
   }
-  80% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-    opacity: 1;
-  }
   100% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
     opacity: 1;
   }
 }
