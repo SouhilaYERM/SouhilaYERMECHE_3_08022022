@@ -25,6 +25,20 @@ $quaternaire: #c8c8c8;
         transform: scale(1.1);
         opacity: 1;
     }
+    .coeurs_vi {
+        background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index : 0;
+    }
+    .coeurs_pl {
+        background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: 1;
+        transform: scale(1.1);
+        opacity: 1;
+    }
 }
 *{
     box-sizing: border-box;
@@ -205,6 +219,18 @@ $quaternaire: #c8c8c8;
         right: 10px;
         z-index: 1;
     }
+    &_pl {
+        opacity: 0;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: absolute;
+        transform: scale(1);
+        transition: all 500ms;
+    }
+    &_vi {
+        position: absolute; 
+        z-index: 1;
+    }
 }
 
 .footer {
@@ -252,6 +278,17 @@ $quaternaire: #c8c8c8;
         &::first-letter {
             text-transform: uppercase;
         }
+    }
+    &_nom_et_coeur {
+        :hover {
+            @include heart-hover;
+            cursor: pointer;
+        }
+    }
+    .coeurs {
+        position: absolute; 
+        bottom: 35px; 
+        right: 50px;
     }
 }
 .list {
