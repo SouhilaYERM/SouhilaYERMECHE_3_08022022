@@ -1,45 +1,6 @@
-$valeur1 : 10px;
-$valeur2 : 25px;
-$primaire:#9356DC;
-$secondaire: #FF79DA;
-$tertiaire: #99E2D0;
-$quaternaire: #c8c8c8;
-@mixin hover-etape {
-    background-color: lighten($primaire, 35);
-    .fonctionnement_icone {
-        color:$primaire;
-    }
-}
-@mixin heart-hover {
-    .coeurs_vide {
-        background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        z-index : 0;
-    }
-    .coeurs_plein {
-        background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        z-index: 1;
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    .coeurs_vi {
-        background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        z-index : 0;
-    }
-    .coeurs_pl {
-        background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        z-index: 1;
-        transform: scale(1.1);
-        opacity: 1;
-    }
-}
+@import './_variables.scss';
+@import './_keyframes.scss';
+@import './_media.scss';
 *{
     box-sizing: border-box;
     font-family: 'Roboto', 'sans-serif';
@@ -49,7 +10,75 @@ $quaternaire: #c8c8c8;
         display:none;
     }
 }
-/* style de la partie header */
+// animations de chargement //
+.content{
+    transform-origin: bottom;
+    transform: scale(0);
+    animation: chargement linear; 
+    animation-delay: 2900ms;
+    animation-duration: 100ms;
+    background-color: Lighten($quaternaire, 100%);
+    animation-fill-mode: forwards;
+}
+.body {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+}
+.section{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 46px;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scale(1); 
+  animation: disparition linear;
+  animation-delay: 2700ms; 
+  animation-duration: 100ms;
+  animation-fill-mode: forwards; 
+}
+.letter {
+    font-family: 'Shrikhand', 'cursive';
+    animation: spinner 1000ms linear infinite;
+    animation-fill-mode: backwards;
+    letter-spacing: 5px;
+    font-size: 20pt;
+    transform: scale(0);
+    background:-webkit-linear-gradient(top,$primaire, $secondaire);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+}
+.let1 {
+    animation-delay: 50ms, 0ms;
+}
+.let2 {
+    animation-delay: 100ms, 0ms;
+}
+.let3 {
+    animation-delay: 150ms, 0ms;
+}
+.let4 {
+    animation-delay: 200ms, 0ms;
+}
+.let5 {
+    animation-delay: 250ms, 0ms;
+}
+.let6 {
+    animation-delay:300ms, 0ms;
+}
+.let7 {
+    animation-delay:350ms, 0ms;
+}
+.let8 {
+    animation-delay:400ms,0ms;
+}
+//fin animation de chargement //
+
+//Style de la page d'accueil //
+//style de la partie header //
 .header {
     
     position: relative;
@@ -57,7 +86,7 @@ $quaternaire: #c8c8c8;
         text-align: center;
         font-family: 'Shrikhand', 'cursive';
         margin : 0px 0px 2px 0px;
-        padding: $valeur1;
+        padding: 10px;
         font-size: 16pt;
         box-shadow: 0px 5px 10px darken($quaternaire,5);
     }
@@ -67,18 +96,20 @@ $quaternaire: #c8c8c8;
         font-size: 15pt;
     }
 }
+
+//Style de la partie description //
 .description {
     text-align: center;
     &_position {
         background-color: lighten($quaternaire, 15);
-        padding: $valeur1;
+        padding: 10px;
         font-size: 10pt;
     } 
     &_icone {
-        padding-right: $valeur1;
+        padding-right: 10px;
     }
     &_accroche {
-        padding: $valeur2;
+        padding: 25px;
         background-color: lighten($quaternaire, 18);
         text-align: center;
         height: 270px;
@@ -94,11 +125,11 @@ $quaternaire: #c8c8c8;
     color: darken($quaternaire,60)
 }
 .titre_de_section {
-    padding-left: $valeur2;
+    padding-left: 25px;
 }
 .bouton{
     margin: auto;
-    padding: $valeur1 +5px;
+    padding: 15px;
     font-size: 12pt;
     max-width: 210px;
     background: linear-gradient( $secondaire , $primaire); 
@@ -107,20 +138,25 @@ $quaternaire: #c8c8c8;
     text-align: center;
     box-shadow:  5px 5px 5px $quaternaire;
 }
+
+//Style de la partie fontionnement //
 .fonctionnement {
     &_list_etapes {
-        margin:$valeur2;
+        margin: 25px;
         display: flex; 
         justify-content: space-evenly;
         flex-wrap: wrap;
         :hover {
-            @include hover-etape;
+            background-color: lighten($primaire, 35);
+            .fonctionnement_icone {
+                color:$primaire;
+            }
         }
     }
     &_etape {
         width:270px;
-        padding:$valeur1 +5px;
-        margin: $valeur1;
+        padding: 15px;
+        margin: 10px;
         background-color: lighten($quaternaire, 18) ;
         border-radius: 20px;
         position:relative;
@@ -141,13 +177,15 @@ $quaternaire: #c8c8c8;
         margin-left: 10px;
     }
     &_text {
-        padding-left: $valeur1;
+        padding-left: 10px;
     }
 }
+
+//Style de la partie liste des restaurants //
 .liste_des_restaurants {
     background-color: lighten($quaternaire, 18);
-    padding-top: $valeur2;
-    padding-bottom : $valeur2 +10px;
+    padding-top: 25px;
+    padding-bottom : 35px;
 }
 .restaurants {
     display: flex;
@@ -155,7 +193,7 @@ $quaternaire: #c8c8c8;
     flex-wrap:wrap;
     &_carte {
         height: 210px;
-        margin: $valeur1;
+        margin: 10px;
         box-shadow:  5px 5px 5px $quaternaire;
         background-color: lighten($quaternaire,100);
         border-radius: 10px;
@@ -185,9 +223,6 @@ $quaternaire: #c8c8c8;
         display:flex;
         justify-content: space-between;
         padding: 10px;
-        :hover {
-            @include heart-hover;
-        }
     }
     &_et_lieu {
         border-bottom-left-radius: 10px;
@@ -219,20 +254,35 @@ $quaternaire: #c8c8c8;
         right: 10px;
         z-index: 1;
     }
-    &_pl {
-        opacity: 0;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        position: absolute;
-        transform: scale(1);
-        transition: all 500ms;
-    }
-    &_vi {
+    &_fu {
         position: absolute; 
-        z-index: 1;
+        top: -10px;
+        right: -35px;
+    }
+    &_em {
+        position: absolute; 
+        top: -10px;
+        right: -35px;
+    }
+    :hover {
+        .coeurs_vide {
+            background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index : 0;
+        }
+        .coeurs_plein {
+            background: -webkit-gradient(linear, left top, left bottom, from($primaire), to($secondaire));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 1;
+            transform: scale(1.2);
+            opacity: 1;
+        }
     }
 }
 
+//Style de la partie footer //
 .footer {
     background-color: darken($quaternaire,60);
     &_logo{
@@ -253,9 +303,11 @@ $quaternaire: #c8c8c8;
     }
 }
 .contact {
-    color:white;
+    color: lighten($quaternaire, 100);
 }
-/* style des pages des restaurants*/
+// fin de style de la page d'accueil //
+
+// style des pages des restaurants//
 .main {
     background-color: lighten($quaternaire, 18); 
 }
@@ -281,7 +333,6 @@ $quaternaire: #c8c8c8;
     }
     &_nom_et_coeur {
         :hover {
-            @include heart-hover;
             cursor: pointer;
         }
     }
@@ -291,6 +342,8 @@ $quaternaire: #c8c8c8;
         right: 50px;
     }
 }
+
+//Style des listes de plats //
 .list {
     padding:10px;
     &_ls {
@@ -361,7 +414,7 @@ $quaternaire: #c8c8c8;
         transform-origin: right;
         transform: scaleX(0);
         transition:transform 600ms;
-        background-color: #99E2D0;
+        background-color: $tertiaire;
         height: 60px;
         padding:20px 15px 20px 15px;
         position: absolute;
@@ -392,120 +445,9 @@ $quaternaire: #c8c8c8;
     transform: rotate(0turn);
     transition:transform 600ms; 
     font-size: 16pt;
-    color:white;
+    color: lighten($quaternaire, 100);
 }
 .commander {
     padding: 40px 10px 50px 10px; 
     background-color: lighten($quaternaire,18);
-}
-/*** animations de chargement ***/
-.content{
-    transform-origin: bottom;
-    transform: scale(0);
-    animation: chargement linear; 
-    animation-delay: 2900ms;
-    animation-duration: 100ms;
-    background-color: white;
-    animation-fill-mode: forwards;
-}
-@keyframes chargement {
-    0% {
-        transform: scale(0);
-    }
-    100%{
-        transform: scale(1);
-    }
-}
-@keyframes disparition {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(0);
-        height: 0;
-    }
-}
-.body {
-    height: 100vh;
-    position: relative;
-    width: 100%;
-}
-.section{
-  display:flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  font-size: 46px;
-  height: 100%;
-  transform-origin: bottom;
-  transform: scale(1); 
-  animation: disparition linear;
-  animation-delay: 2700ms; 
-  animation-duration: 100ms;
-  animation-fill-mode: forwards; 
-}
-.letter {
-    font-family: 'Shrikhand', 'cursive';
-    animation: spinner 1000ms linear infinite;
-    animation-fill-mode: backwards;
-    letter-spacing: 5px;
-    font-size: 20pt;
-    transform: scale(0);
-    background:-webkit-linear-gradient(top,#9356DC,#FF79DA);
-    background-clip:text;
-    -webkit-background-clip:text;
-    color:transparent;
-}
-@media screen and (min-width:768px) {
-    .letter {
-        font-size: 40pt;
-    }
-}
-@media screen and (min-width:1024px) {
-    .letter {
-        font-size: 60pt;
-    }
-}
-.let1 {
-    animation-delay: 50ms, 0ms;
-}
-.let2 {
-    animation-delay: 100ms, 0ms;
-}
-.let3 {
-    animation-delay: 150ms, 0ms;
-}
-.let4 {
-    animation-delay: 200ms, 0ms;
-}
-.let5 {
-    animation-delay: 250ms, 0ms;
-}
-.let6 {
-    animation-delay:300ms, 0ms;
-}
-.let7 {
-    animation-delay:350ms, 0ms;
-}
-.let8 {
-    animation-delay:400ms,0ms;
-}
-@keyframes spinner {
-    0% {
-        transform: scale(.5), 
-    }
-    80% {
-        transform: scale(1.5);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-@keyframes animation {
-    0% {
-        opacity: 0; 
-    }
-    100% {
-        opacity: 1;
-    }
 }

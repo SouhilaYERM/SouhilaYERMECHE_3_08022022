@@ -1,3 +1,109 @@
+@-webkit-keyframes chargement {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes chargement {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes disparition {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    height: 0;
+  }
+}
+
+@keyframes disparition {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    height: 0;
+  }
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  80% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  80% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .letter {
+    font-size: 40pt;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .letter {
+    font-size: 60pt;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -8,7 +114,112 @@
   display: none;
 }
 
-/* style de la partie header */
+.content {
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: chargement linear;
+          animation: chargement linear;
+  -webkit-animation-delay: 2900ms;
+          animation-delay: 2900ms;
+  -webkit-animation-duration: 100ms;
+          animation-duration: 100ms;
+  background-color: Lighten(#c8c8c8, 100%);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.body {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 46px;
+  height: 100%;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation: disparition linear;
+          animation: disparition linear;
+  -webkit-animation-delay: 2700ms;
+          animation-delay: 2700ms;
+  -webkit-animation-duration: 100ms;
+          animation-duration: 100ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.letter {
+  font-family: 'Shrikhand', 'cursive';
+  -webkit-animation: spinner 1000ms linear infinite;
+          animation: spinner 1000ms linear infinite;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  letter-spacing: 5px;
+  font-size: 20pt;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.let1 {
+  -webkit-animation-delay: 50ms, 0ms;
+          animation-delay: 50ms, 0ms;
+}
+
+.let2 {
+  -webkit-animation-delay: 100ms, 0ms;
+          animation-delay: 100ms, 0ms;
+}
+
+.let3 {
+  -webkit-animation-delay: 150ms, 0ms;
+          animation-delay: 150ms, 0ms;
+}
+
+.let4 {
+  -webkit-animation-delay: 200ms, 0ms;
+          animation-delay: 200ms, 0ms;
+}
+
+.let5 {
+  -webkit-animation-delay: 250ms, 0ms;
+          animation-delay: 250ms, 0ms;
+}
+
+.let6 {
+  -webkit-animation-delay: 300ms, 0ms;
+          animation-delay: 300ms, 0ms;
+}
+
+.let7 {
+  -webkit-animation-delay: 350ms, 0ms;
+          animation-delay: 350ms, 0ms;
+}
+
+.let8 {
+  -webkit-animation-delay: 400ms,0ms;
+          animation-delay: 400ms,0ms;
+}
+
 .header {
   position: relative;
 }
@@ -192,40 +403,6 @@
   padding: 10px;
 }
 
-.restaurants_description :hover .coeurs_vide {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 0;
-}
-
-.restaurants_description :hover .coeurs_plein {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 1;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  opacity: 1;
-}
-
-.restaurants_description :hover .coeurs_vi {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 0;
-}
-
-.restaurants_description :hover .coeurs_pl {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 1;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  opacity: 1;
-}
-
 .restaurants_et_lieu {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -264,20 +441,33 @@
   z-index: 1;
 }
 
-.coeurs_pl {
-  opacity: 0;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.coeurs_fu {
   position: absolute;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
+  top: -10px;
+  right: -35px;
 }
 
-.coeurs_vi {
+.coeurs_em {
   position: absolute;
+  top: -10px;
+  right: -35px;
+}
+
+.coeurs :hover .coeurs_vide {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 0;
+}
+
+.coeurs :hover .coeurs_plein {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   z-index: 1;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
 }
 
 .footer {
@@ -307,7 +497,6 @@
   color: white;
 }
 
-/* style des pages des restaurants*/
 .main {
   background-color: #f6f6f6;
 }
@@ -340,40 +529,6 @@
 
 .accueil_nom_et_coeur :hover {
   cursor: pointer;
-}
-
-.accueil_nom_et_coeur :hover .coeurs_vide {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 0;
-}
-
-.accueil_nom_et_coeur :hover .coeurs_plein {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 1;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  opacity: 1;
-}
-
-.accueil_nom_et_coeur :hover .coeurs_vi {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 0;
-}
-
-.accueil_nom_et_coeur :hover .coeurs_pl {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 1;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  opacity: 1;
 }
 
 .accueil .coeurs {
@@ -543,218 +698,5 @@
 .commander {
   padding: 40px 10px 50px 10px;
   background-color: #f6f6f6;
-}
-
-/*** animations de chargement ***/
-.content {
-  -webkit-transform-origin: bottom;
-          transform-origin: bottom;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-animation: chargement linear;
-          animation: chargement linear;
-  -webkit-animation-delay: 2900ms;
-          animation-delay: 2900ms;
-  -webkit-animation-duration: 100ms;
-          animation-duration: 100ms;
-  background-color: white;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes chargement {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes chargement {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@-webkit-keyframes disparition {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    height: 0;
-  }
-}
-
-@keyframes disparition {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    height: 0;
-  }
-}
-
-.body {
-  height: 100vh;
-  position: relative;
-  width: 100%;
-}
-
-.section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 46px;
-  height: 100%;
-  -webkit-transform-origin: bottom;
-          transform-origin: bottom;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-animation: disparition linear;
-          animation: disparition linear;
-  -webkit-animation-delay: 2700ms;
-          animation-delay: 2700ms;
-  -webkit-animation-duration: 100ms;
-          animation-duration: 100ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.letter {
-  font-family: 'Shrikhand', 'cursive';
-  -webkit-animation: spinner 1000ms linear infinite;
-          animation: spinner 1000ms linear infinite;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-  letter-spacing: 5px;
-  font-size: 20pt;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-@media screen and (min-width: 768px) {
-  .letter {
-    font-size: 40pt;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .letter {
-    font-size: 60pt;
-  }
-}
-
-.let1 {
-  -webkit-animation-delay: 50ms, 0ms;
-          animation-delay: 50ms, 0ms;
-}
-
-.let2 {
-  -webkit-animation-delay: 100ms, 0ms;
-          animation-delay: 100ms, 0ms;
-}
-
-.let3 {
-  -webkit-animation-delay: 150ms, 0ms;
-          animation-delay: 150ms, 0ms;
-}
-
-.let4 {
-  -webkit-animation-delay: 200ms, 0ms;
-          animation-delay: 200ms, 0ms;
-}
-
-.let5 {
-  -webkit-animation-delay: 250ms, 0ms;
-          animation-delay: 250ms, 0ms;
-}
-
-.let6 {
-  -webkit-animation-delay: 300ms, 0ms;
-          animation-delay: 300ms, 0ms;
-}
-
-.let7 {
-  -webkit-animation-delay: 350ms, 0ms;
-          animation-delay: 350ms, 0ms;
-}
-
-.let8 {
-  -webkit-animation-delay: 400ms,0ms;
-          animation-delay: 400ms,0ms;
-}
-
-@-webkit-keyframes spinner {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  80% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes spinner {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  80% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@-webkit-keyframes animation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes animation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 /*# sourceMappingURL=style.css.map */
