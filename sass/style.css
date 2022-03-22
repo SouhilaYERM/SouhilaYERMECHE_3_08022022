@@ -125,7 +125,7 @@
           animation-delay: 2900ms;
   -webkit-animation-duration: 100ms;
           animation-duration: 100ms;
-  background-color: Lighten(#c8c8c8, 100%);
+  background-color: white;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -430,8 +430,8 @@
   top: 10px;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
 }
 
 .coeurs_vide {
