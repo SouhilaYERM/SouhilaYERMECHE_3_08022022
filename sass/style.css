@@ -288,6 +288,13 @@
   text-align: center;
   -webkit-box-shadow: 5px 5px 5px #c8c8c8;
           box-shadow: 5px 5px 5px #c8c8c8;
+  opacity: 1;
+  -webkit-transition: opacity;
+  transition: opacity;
+}
+
+.bouton:hover {
+  opacity: 0.8;
 }
 
 .fonctionnement_list_etapes {

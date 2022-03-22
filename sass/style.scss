@@ -137,6 +137,11 @@
     color: lighten($quaternaire,100);
     text-align: center;
     box-shadow:  5px 5px 5px $quaternaire;
+    opacity: 1;
+    transition: opacity;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 //Style de la partie fontionnement //
